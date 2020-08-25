@@ -1,14 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import ExpenseRow from "./ExpenseRow";
+import TableHeaderRow from "./ExpenseRow";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Hello Brian.</p>
+                <h1>React Expense Tracker</h1>
             </header>
+            <table className="table">
+                <TableHeaderRow />
+            </table>
         </div>
     );
 }
