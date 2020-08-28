@@ -47,7 +47,6 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     color: rgb(0, 207, 214);
     width: 500px;
     margin: auto;
@@ -57,7 +56,8 @@ table {
     border-collapse: collapse;
 }
 
-th {
+th,
+td {
     border: 3px dotted rgb(0, 207, 214);
     background-color: #313131;
 }
