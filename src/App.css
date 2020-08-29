@@ -10,32 +10,19 @@ html {
 
 .App {
     text-align: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #313131;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: rgb(0, 207, 214);
-    margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.App-header {
+    width: 100%;
+    background-color: #313131;
+    font-size: calc(10px + 2vmin);
+    color: rgb(0, 207, 214);
+    margin: 0 auto 30px;
+    padding: auto;
 }
 
 .data-cell {
@@ -43,21 +30,19 @@ html {
     width: 80px;
 }
 
-.table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(0, 207, 214);
-    width: 500px;
-    margin: auto;
-}
-
 table {
     border-collapse: collapse;
+}
+
+.table:nth-child(odd) {
+    background-color: seashell;
+}
+
+.table:nth-child(even) {
+    background-color: grey;
 }
 
 th,
 td {
     border: 3px dotted rgb(0, 207, 214);
-    background-color: #313131;
 }

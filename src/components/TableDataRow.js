@@ -1,20 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 
-class TableDataRow extends Component {
-    render() {
-        return (
+function TableDataRow(props) {
+    return (
+        <tbody>
             <tr>
-                <td>{this.props.item.name}</td>
-                <td>{this.props.item.date}</td>
-                <td>{this.props.item.amount}</td>
-                <td>{this.props.item.type}</td>
-
+                <td>{props.expense.date}</td>
+                <td>{props.expense.amount}</td>
+                <td>{props.expense.type}</td>
+                <td>{props.expense.description}</td>
                 <td>
-                    <button></button>
+                    <button onClick={() => props.handleChange(props.expense.id)}>X</button>
                 </td>
             </tr>
-        );
-    }
+        </tbody>
+    );
 }
 
 export default TableDataRow;
