@@ -10,7 +10,7 @@ function TableDataRow(props) {
                 <td>{props.expense.type}</td>
                 <td>{props.expense.description}</td>
                 <td>
-                    <button onClick={() => props.handleChange(props.expense.id)}>X</button>
+                    <button onClick={() => props.removeButton(props.expense.id)}>X</button>
                 </td>
             </tr>
         </tbody>

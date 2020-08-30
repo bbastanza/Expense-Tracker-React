@@ -5,16 +5,16 @@ import TableDataRow from "./TableDataRow";
 class Table extends Component {
     constructor() {
         super();
-        this.buttonClicked = this.buttonClicked.bind(this);
+        this.removeButtonClicked = this.removeButtonClicked.bind(this);
     }
 
-    buttonClicked(id) {
+    removeButtonClicked(id) {
         this.props.removeExpense(id);
     }
 
     render() {
         let tableDataRowComponents = this.props.expenses.map((item) => {
-            return <TableDataRow handleChange={this.buttonClicked} key={item.id} expense={item} />;
+            return <TableDataRow removeButton={this.removeButtonClicked} key={item.id} expense={item} />;
         });
 
         return (

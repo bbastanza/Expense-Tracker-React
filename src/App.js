@@ -15,6 +15,7 @@ class App extends Component {
 
     addExpense(newExpense, e) {
         e.preventDefault();
+
         this.setState((prevState) => {
             let newItems = prevState.items;
             newItems.push(newExpense);
@@ -25,9 +26,11 @@ class App extends Component {
     removeExpense(id) {
         this.setState((prevState) => {
             let remainingItems = [];
+
             for (const item of prevState.items) {
                 if (item.id !== id) remainingItems.push(item);
             }
+
             return { items: remainingItems };
         });
     }
