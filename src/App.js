@@ -7,38 +7,26 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            items: [
-                {
-                    id: 1,
-                    date: 301988,
-                    amount: 300,
-                    type: "credit",
-                    description: "McDonald's",
-                },
-                {
-                    id: 2,
-                    date: 777547,
-                    amount: 198,
-                    type: "cash",
-                    description: "Burger King",
-                },
-            ],
+            items: [],
         };
         this.removeExpense = this.removeExpense.bind(this);
         this.addExpense = this.addExpense.bind(this);
     }
 
-    addExpense(newExpense) {
-        console.log(newExpense);
+    addExpense(newExpense, e) {
+        e.preventDefault();
+        this.setState((prevState) => {
+            let newItems = prevState.items;
+            newItems.push(newExpense);
+            return { items: newItems };
+        });
     }
 
     removeExpense(id) {
         this.setState((prevState) => {
             let remainingItems = [];
             for (const item of prevState.items) {
-                if (item.id !== id) {
-                    remainingItems.push(item);
-                }
+                if (item.id !== id) remainingItems.push(item);
             }
             return { items: remainingItems };
         });
