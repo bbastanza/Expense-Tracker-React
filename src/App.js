@@ -13,9 +13,14 @@ class App extends Component {
         this.addExpense = this.addExpense.bind(this);
     }
 
+    componentDidMount() {
+        const itemsFromLocalStorage = JSON.parse(localStorage.getItem("expenses")) || [];
+        this.setState({ items: itemsFromLocalStorage });
+    }
+
     addExpense(newExpense, e) {
         e.preventDefault();
-
+        newExpense.id = Math.random() * 100;
         this.setState((prevState) => {
             let newItems = prevState.items;
             newItems.push(newExpense);
@@ -26,13 +31,15 @@ class App extends Component {
     removeExpense(id) {
         this.setState((prevState) => {
             let remainingItems = [];
-
             for (const item of prevState.items) {
                 if (item.id !== id) remainingItems.push(item);
             }
-
             return { items: remainingItems };
         });
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem("expenses", JSON.stringify(this.state.items));
     }
 
     render() {
