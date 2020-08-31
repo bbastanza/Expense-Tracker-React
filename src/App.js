@@ -13,14 +13,21 @@ class App extends Component {
         this.addExpense = this.addExpense.bind(this);
     }
 
+<<<<<<< HEAD
     // componentDidMount() {
     //     const itemsFromLocalStorage = JSON.parse(localStorage.getItem("expenses")) || [];
     //     this.setState({ items: itemsFromLocalStorage });
     // }
+=======
+    componentDidMount() {
+        const itemsFromLocalStorage = JSON.parse(localStorage.getItem("expenses")) || [];
+        this.setState({ items: itemsFromLocalStorage });
+    }
+>>>>>>> 955854aa16f4db508f4fcb0bc6c338260fe6b3c2
 
     addExpense(newExpense, e) {
         e.preventDefault();
-
+        newExpense.id = Math.random() * 100;
         this.setState((prevState) => {
             let newItems = prevState.items;
             newItems.push(newExpense);
@@ -31,11 +38,9 @@ class App extends Component {
     removeExpense(id) {
         this.setState((prevState) => {
             let remainingItems = [];
-
             for (const item of prevState.items) {
                 if (item.id !== id) remainingItems.push(item);
             }
-
             return { items: remainingItems };
         });
     }

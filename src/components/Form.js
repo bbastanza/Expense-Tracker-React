@@ -18,7 +18,6 @@ class Form extends Component {
         const { name, value } = e.target;
         this.setState({
             [name]: value,
-            id: Math.random() * 100,
         });
     }
 
