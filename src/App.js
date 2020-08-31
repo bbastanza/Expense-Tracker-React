@@ -13,6 +13,11 @@ class App extends Component {
         this.addExpense = this.addExpense.bind(this);
     }
 
+    // componentDidMount() {
+    //     const itemsFromLocalStorage = JSON.parse(localStorage.getItem("expenses")) || [];
+    //     this.setState({ items: itemsFromLocalStorage });
+    // }
+
     addExpense(newExpense, e) {
         e.preventDefault();
 
@@ -33,6 +38,10 @@ class App extends Component {
 
             return { items: remainingItems };
         });
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem("expenses", JSON.stringify(this.state.items));
     }
 
     render() {
