@@ -18,7 +18,7 @@ The specifics of what I learned are the following:
 
 > React Components
 
-> React Events, State & Props
+> React Events, State, Props & Conditional Rendering
 
 > Lifestyle Methods
 
