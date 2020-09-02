@@ -2,15 +2,15 @@ import React from "react";
 
 function TableHeaderRow() {
     return (
-        <tbody>
+        <thead className="table-info">
             <tr>
-                <th className="data-cell">Date</th>
-                <th className="data-cell">Amount</th>
-                <th className="data-cell">Type</th>
-                <th className="data-cell">Description</th>
-                <th className="data-cell">Remove</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Remove</th>
             </tr>
-        </tbody>
+        </thead>
     );
 }
 

@@ -13,17 +13,14 @@ class App extends Component {
         this.addExpense = this.addExpense.bind(this);
     }
 
-<<<<<<< HEAD
-    // componentDidMount() {
-    //     const itemsFromLocalStorage = JSON.parse(localStorage.getItem("expenses")) || [];
-    //     this.setState({ items: itemsFromLocalStorage });
-    // }
-=======
     componentDidMount() {
         const itemsFromLocalStorage = JSON.parse(localStorage.getItem("expenses")) || [];
         this.setState({ items: itemsFromLocalStorage });
     }
->>>>>>> 955854aa16f4db508f4fcb0bc6c338260fe6b3c2
+
+    componentDidUpdate() {
+        localStorage.setItem("expenses", JSON.stringify(this.state.items));
+    }
 
     addExpense(newExpense, e) {
         e.preventDefault();
@@ -45,18 +42,21 @@ class App extends Component {
         });
     }
 
-    componentDidUpdate() {
-        localStorage.setItem("expenses", JSON.stringify(this.state.items));
-    }
-
     render() {
         return (
             <div className="App">
-                <header className="App-header">
+                <header className="App-header shadowss">
                     <h1>React Expense Tracker</h1>
                 </header>
-                <Form addExpense={this.addExpense} />
-                <Table removeExpense={this.removeExpense} expenses={this.state.items} />
+                <div style={{ float: "right", paddingRight: 70 }}>
+                    <img alt="react" src="./logo192.png" />
+                </div>
+                <div>
+                    <Form addExpense={this.addExpense} />
+                </div>
+                <div id="table">
+                    <Table removeExpense={this.removeExpense} expenses={this.state.items} />
+                </div>
             </div>
         );
     }
