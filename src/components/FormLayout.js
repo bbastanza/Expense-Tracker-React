@@ -1,44 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import ".././App.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-class Form extends Component {
-    constructor() {
-        super();
-        this.state = {
-            id: "",
-            date: "",
-            amount: "",
-            type: "Cash",
-            description: "",
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.pressedSubmit = this.pressedSubmit.bind(this);
-    }
-
-    handleChange(e) {
-        const { name, value } = e.target;
-        this.setState({
-            [name]: value,
-        });
-    }
-
-    pressedSubmit(e) {
-        this.props.addExpense(this.state, e);
-        this.setState({
-            id: "",
-            date: "",
-            amount: "",
-            type: "Cash",
-            description: "",
-        });
-    }
-
-
+class FormLayout extends React.Component {
     render() {
         return (
             <div className="container">
-                <form onSubmit={this.pressedSubmit}>
+                <form onSubmit={this.props.pressedSubmit}>
                     <div className="form-group row">
                         <label className="col-sm-2   col-form-label offset-sm-4" htmlFor="description">
                             Description:
@@ -49,8 +17,8 @@ class Form extends Component {
                                 className=" shadowss"
                                 type="text"
                                 name="description"
-                                value={this.state.description}
-                                onChange={this.handleChange}
+                                value={this.props.data.description}
+                                onChange={this.props.handleChange}
                                 required
                             />
                         </div>
@@ -65,8 +33,8 @@ class Form extends Component {
                                 className=" shadowss"
                                 type="number"
                                 name="amount"
-                                value={this.state.amount}
-                                onChange={this.handleChange}
+                                value={this.props.data.amount}
+                                onChange={this.props.handleChange}
                                 required
                             />
                         </div>
@@ -80,8 +48,8 @@ class Form extends Component {
                                 id="type"
                                 name="type"
                                 className=" shadowss"
-                                value={this.state.type}
-                                onChange={this.handleChange}
+                                value={this.props.data.type}
+                                onChange={this.props.handleChange}
                             >
                                 <option value="Cash">Cash</option>
                                 <option value="Credit Card">Credit</option>
@@ -101,8 +69,8 @@ class Form extends Component {
                                 className="date  shadowss"
                                 name="date"
                                 type="date"
-                                value={this.state.date}
-                                onChange={this.handleChange}
+                                value={this.props.data.date}
+                                onChange={this.props.handleChange}
                                 required
                             />
                         </div>
@@ -116,4 +84,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default FormLayout;

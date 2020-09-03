@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Table from "./components/Table";
-import Form from "./components/Form";
+import FormData from "./components/FormData";
 
 class App extends Component {
     constructor() {
@@ -52,7 +52,7 @@ class App extends Component {
                     <img alt="react" src="./logo192.png" />
                 </div>
                 <div>
-                    <Form addExpense={this.addExpense} />
+                    <FormData addExpense={this.addExpense} />
                 </div>
                 <div id="table">
                     <Table removeExpense={this.removeExpense} expenses={this.state.items} />
