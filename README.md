@@ -28,4 +28,4 @@ The specifics of what I learned are the following:
 
 ## Author
 
-Brian Bastanza- Full Stack Web Developer
+Brian Bastanza- Full Stack Web Developer www.brianbastanza.com
