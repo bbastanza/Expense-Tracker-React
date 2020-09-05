@@ -5,14 +5,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import ".././App.css";
 
 class Table extends Component {
-    constructor() {
-        super();
-        this.removeButtonClicked = this.removeButtonClicked.bind(this);
-    }
-
-    removeButtonClicked(id) {
+    removeButtonClicked = (id) => {
         this.props.removeExpense(id);
-    }
+    };
 
     render() {
         if (this.props.expenses.length > 0) {

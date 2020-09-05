@@ -4,14 +4,9 @@ import Table from "./components/Table";
 import FormData from "./components/FormData";
 
 class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            items: [],
-        };
-        this.removeExpense = this.removeExpense.bind(this);
-        this.addExpense = this.addExpense.bind(this);
-    }
+    state = {
+        items: [],
+    };
 
     componentDidMount() {
         const itemsFromLocalStorage = JSON.parse(localStorage.getItem("expenses")) || [];
@@ -22,7 +17,7 @@ class App extends Component {
         localStorage.setItem("expenses", JSON.stringify(this.state.items));
     }
 
-    addExpense(newExpense, e) {
+    addExpense = (newExpense, e) => {
         e.preventDefault();
         newExpense.id = Math.random() * 100;
         this.setState((prevState) => {
@@ -30,9 +25,9 @@ class App extends Component {
             newItems.push(newExpense);
             return { items: newItems };
         });
-    }
+    };
 
-    removeExpense(id) {
+    removeExpense = (id) => {
         this.setState((prevState) => {
             let remainingItems = [];
             for (const item of prevState.items) {
@@ -40,7 +35,7 @@ class App extends Component {
             }
             return { items: remainingItems };
         });
-    }
+    };
 
     render() {
         return (
