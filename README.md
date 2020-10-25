@@ -30,6 +30,7 @@ The specifics of what I learned are the following:
 
 ### Brian Bastanza- Full Stack Web Developer
 
-[Personal Website](www.brianbastanza.com)
+
+<a href="https://www.brianbastanza.me/" target="_blank" rel="noopener">Personal Website</a>
 
 [LinkedIn](www.linkedin.com/in/brian-bastanza-9035397b)
